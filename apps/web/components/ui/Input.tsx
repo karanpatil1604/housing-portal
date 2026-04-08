@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { cn } from "@/lib/utils/cn";
 import type { InputHTMLAttributes, SelectHTMLAttributes } from "react";
 
@@ -9,15 +10,10 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   error?: string;
 }
 
-export function Input({
-  label,
-  hint,
-  unit,
-  error,
-  className,
-  id,
-  ...props
-}: InputProps) {
+export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
+  { label, hint, unit, error, className, id, ...props },
+  ref
+) {
   const inputId = id ?? label?.toLowerCase().replace(/\s+/g, "-");
   return (
     <div className="flex flex-col gap-1">
@@ -34,6 +30,7 @@ export function Input({
       <div className="relative">
         <input
           id={inputId}
+          ref={ref}
           className={cn(
             "input-base",
             unit && "pr-12",
@@ -53,7 +50,7 @@ export function Input({
       )}
     </div>
   );
-}
+});
 
 // ── Select ────────────────────────────────────────────────────
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
