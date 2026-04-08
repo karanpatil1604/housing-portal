@@ -8,12 +8,12 @@ FastAPI :8000          Spring Boot :8080    Next.js :3000
 
 ---
 
-## One-Command Demo
+## One-Command Demo Development Server
 
 ```bash
 cd housing-portal
 cp .env.example .env
-docker compose up --build
+docker compose -f docker-compose.dev.yml up -d --build
 ```
 
 Open **http://localhost:3000** — done.
