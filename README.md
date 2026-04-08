@@ -1,11 +1,6 @@
 # Housing Portal
 
-
-```
-apps/api-fastapi/  →  apps/api-java/  →  apps/web/
-FastAPI :8000          Spring Boot :8080    Next.js :3000
-```
-
+[📖 User Guide](USER-GUIDE.md) — Step-by-step product usage guide.
 ---
 
 ## One-Command Demo Development Server
