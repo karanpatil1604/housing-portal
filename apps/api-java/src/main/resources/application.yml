@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: housing-portal-api
+
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=500,expireAfterWrite=60s
+    cache-names:
+      - marketStats
+      - marketFilters
+      - modelInfo
+
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    default-property-inclusion: non_null
+
+fastapi:
+  base-url: ${FASTAPI_BASE_URL:http://localhost:8000}
+  timeout-seconds: 10
+
+logging:
+  level:
+    com.housingportal: DEBUG
+    org.springframework.web: INFO
+    reactor.netty: WARN
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

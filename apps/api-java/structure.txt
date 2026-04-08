@@ -1,0 +1,30 @@
+apps/api-java/
+└── src/main/java/com/housingportal/
+    ├── HousingPortalApplication.java
+    ├── config/
+    │   ├── WebClientConfig.java       # FastAPI WebClient bean
+    │   ├── CacheConfig.java           # Caffeine/Redis cache setup
+    │   └── CorsConfig.java            # Allow Next.js origin
+    ├── controller/
+    │   ├── AnalysisController.java    # GET /api/analysis/stats, filters, export
+    │   └── WhatIfController.java      # POST /api/analysis/what-if
+    ├── service/
+    │   ├── AnalysisService.java       # Business logic + aggregation
+    │   ├── FastApiClient.java         # WebClient calls to FastAPI
+    │   └── ExportService.java         # CSV/PDF generation
+    ├── model/
+    │   ├── request/
+    │   │   ├── HousingFeatures.java   # Mirrors OpenAPI HousingFeatures
+    │   │   └── WhatIfRequest.java
+    │   └── response/
+    │       ├── StatsResponse.java
+    │       ├── FiltersResponse.java
+    │       ├── WhatIfResponse.java
+    │       └── ExportResponse.java
+    └── exception/
+        ├── GlobalExceptionHandler.java
+        └── FastApiException.java
+src/main/resources/
+    ├── application.yml
+    └── application-docker.yml
+pom.xml

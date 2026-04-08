@@ -1,0 +1,6 @@
+fastapi:
+  base-url: http://fastapi:8000
+
+logging:
+  level:
+    com.housingportal: INFO

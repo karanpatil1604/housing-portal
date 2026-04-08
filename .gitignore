@@ -1,0 +1,78 @@
+# ============================================================
+# Housing Portal — .gitignore
+# ============================================================
+
+# ── Environment (NEVER commit these) ────────────────────────
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# ── Next.js ──────────────────────────────────────────────────
+apps/web/.next/
+apps/web/out/
+apps/web/node_modules/
+apps/web/.turbo/
+
+# ── Java / Maven ─────────────────────────────────────────────
+apps/api-java/target/
+apps/api-java/*.class
+apps/api-java/.mvn/wrapper/maven-wrapper.jar
+!apps/api-java/.mvn/wrapper/maven-wrapper.properties
+/target/
+*.log
+
+# ── Python / FastAPI ─────────────────────────────────────────
+apps/api-fastapi/__pycache__/
+apps/api-fastapi/**/__pycache__/
+apps/api-fastapi/*.pyc
+apps/api-fastapi/*.pyo
+apps/api-fastapi/*.pyd
+apps/api-fastapi/.venv/
+apps/api-fastapi/venv/
+apps/api-fastapi/env/
+apps/api-fastapi/*.egg-info/
+apps/api-fastapi/dist/
+apps/api-fastapi/build/
+apps/api-fastapi/.pytest_cache/
+apps/api-fastapi/.mypy_cache/
+apps/api-fastapi/.ruff_cache/
+apps/api-fastapi/htmlcov/
+apps/api-fastapi/.coverage
+apps/api-fastapi/coverage.xml
+apps/api-fastapi/*.log
+
+# ── Docker ───────────────────────────────────────────────────
+# (Dockerfiles and docker-compose ARE committed — only ignore runtime artifacts)
+docker-compose.override.yml
+
+# ── OS ───────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ── IDE / Editor ─────────────────────────────────────────────
+.idea/
+.vscode/
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.project
+.classpath
+.settings/
+
+# ── Logs ─────────────────────────────────────────────────────
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+

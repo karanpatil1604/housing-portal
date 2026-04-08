@@ -1,0 +1,41 @@
+# Version control
+.git
+.gitignore
+
+# Python bytecode
+__pycache__
+*.py[cod]
+*.pyo
+.mypy_cache
+.ruff_cache
+
+# Virtual environments
+.venv
+venv
+env
+
+# Tests & coverage
+tests/
+htmlcov/
+.coverage
+.pytest_cache
+
+# Local config
+.env
+*.env
+
+# Editor artefacts
+.vscode
+.idea
+*.swp
+
+# CI
+.github
+
+# Docs
+*.md
+docs/
+
+# OS
+.DS_Store
+Thumbs.db

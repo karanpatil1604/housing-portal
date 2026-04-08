@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "housing-price-api"
+version = "1.0.0"
+description = "Production-grade Housing Price Prediction REST API"
+requires-python = ">=3.12"
+authors = [{ name = "Housing Price API" }]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+log_cli = true
+log_cli_level = "INFO"
+addopts = "-v --tb=short --cov=app --cov-report=term-missing --cov-report=html:htmlcov"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+ignore_missing_imports = true

@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-syne: 'Syne', sans-serif;
+    --bg-primary: #060B14;
+    --bg-secondary: #0A1220;
+    --bg-panel: #0F1A2E;
+    --bg-card: #141F35;
+    --border-subtle: rgba(42, 63, 95, 0.6);
+    --border-muted: rgba(42, 63, 95, 0.35);
+    --text-primary: #DDE7F0;
+    --text-secondary: #8BAAC8;
+    --text-muted: #5C7FA8;
+    --accent-amber: #FBB724;
+    --accent-amber-dim: rgba(251, 183, 36, 0.12);
+    --accent-emerald: #34D399;
+    --accent-rose: #FB7185;
+  }
+
+  * {
+    box-sizing: border-box;
+    border-color: var(--border-subtle);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-feature-settings: "ss01", "cv01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg-secondary); }
+  ::-webkit-scrollbar-thumb { background: #2A3F5F; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #3D5A80; }
+
+  /* Selection */
+  ::selection {
+    background: rgba(251, 183, 36, 0.2);
+    color: var(--text-primary);
+  }
+}
+
+@layer components {
+  /* Panel / Card */
+  .panel {
+    @apply bg-slate-800 border border-slate-700/60 rounded-xl shadow-panel;
+  }
+  .card {
+    @apply bg-slate-900 border border-slate-700/40 rounded-lg shadow-card;
+  }
+
+  /* Input base */
+  .input-base {
+    @apply w-full bg-slate-900 border border-slate-700/60 rounded-lg px-3 py-2.5
+           text-slate-100 text-sm placeholder:text-slate-500
+           focus:outline-none focus:ring-1 focus:ring-amber-400/60 focus:border-amber-400/60
+           transition-all duration-150;
+  }
+
+  /* Label */
+  .label-base {
+    @apply block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1.5;
+  }
+
+  /* Stat cell */
+  .stat-value {
+    @apply font-mono text-2xl font-semibold text-amber-400 tabular-nums;
+  }
+  .stat-label {
+    @apply text-xs uppercase tracking-wider text-slate-500 font-mono;
+  }
+
+  /* Section divider */
+  .section-rule {
+    @apply border-t border-slate-700/40 my-6;
+  }
+
+  /* Shimmer skeleton */
+  .skeleton {
+    @apply rounded bg-slate-800 overflow-hidden;
+    background: linear-gradient(
+      90deg,
+      #141F35 25%,
+      #1E2D47 50%,
+      #141F35 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+}
+
+@layer utilities {
+  .text-gradient-amber {
+    background: linear-gradient(135deg, #FBB724 0%, #F59E0B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-grid {
+    background-image: linear-gradient(rgba(30,45,71,0.3) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(30,45,71,0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .border-b-rule {
+    border-bottom: 1px solid rgba(42, 63, 95, 0.5);
+  }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}

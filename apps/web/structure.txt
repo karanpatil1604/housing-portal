@@ -1,0 +1,70 @@
+apps/web/
+├── app/
+│   ├── layout.tsx                    # Root layout (nav + providers)
+│   ├── page.tsx                      # Portal landing / redirect
+│   ├── estimator/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx                  # Single prediction form
+│   │   ├── batch/
+│   │   │   └── page.tsx              # Batch prediction
+│   │   ├── history/
+│   │   │   └── page.tsx              # Prediction history
+│   │   └── compare/
+│   │       └── page.tsx              # Side-by-side comparison
+│   └── market/
+│       ├── layout.tsx
+│       ├── page.tsx                  # Analytics dashboard
+│       ├── what-if/
+│       │   └── page.tsx              # What-if scenario tool
+│       └── export/
+│           └── page.tsx              # Export CSV/PDF
+├── components/
+│   ├── ui/                           # Primitive components
+│   │   ├── Button.tsx
+│   │   ├── Card.tsx
+│   │   ├── Input.tsx
+│   │   ├── Select.tsx
+│   │   ├── Badge.tsx
+│   │   ├── Spinner.tsx
+│   │   └── ErrorBoundary.tsx
+│   ├── layout/
+│   │   ├── Navbar.tsx
+│   │   ├── Sidebar.tsx
+│   │   └── PageHeader.tsx
+│   ├── estimator/
+│   │   ├── PredictionForm.tsx        # CLIENT — main form
+│   │   ├── BatchUploadForm.tsx       # CLIENT — CSV batch input
+│   │   ├── PredictionResult.tsx      # Result card
+│   │   ├── PredictionChart.tsx       # CLIENT — recharts
+│   │   ├── HistoryTable.tsx          # CLIENT
+│   │   └── ComparePanel.tsx          # CLIENT
+│   └── market/
+│       ├── StatsDashboard.tsx        # SERVER
+│       ├── MarketFilters.tsx         # CLIENT
+│       ├── PriceDistributionChart.tsx# CLIENT
+│       ├── FeatureImportanceChart.tsx# CLIENT
+│       ├── WhatIfPanel.tsx           # CLIENT
+│       └── ExportButton.tsx          # CLIENT
+├── hooks/
+│   ├── useApi.ts                     # Generic fetch wrapper
+│   ├── usePrediction.ts              # Single prediction logic
+│   ├── useBatchPrediction.ts         # Batch prediction logic
+│   ├── useHistory.ts                 # localStorage history
+│   ├── useMarketStats.ts             # Java API stats
+│   └── useWhatIf.ts                  # What-if analysis
+├── lib/
+│   ├── api/
+│   │   ├── fastapi.ts                # FastAPI client (typed)
+│   │   └── java-api.ts               # Java Spring client (typed)
+│   ├── validations/
+│   │   └── housing.schema.ts         # Zod schema (mirrors OpenAPI)
+│   └── utils/
+│       ├── formatters.ts             # Currency, date helpers
+│       └── csv.ts                    # CSV parse/export
+├── types/
+│   ├── fastapi.types.ts              # Mirrors OpenAPI spec exactly
+│   └── java-api.types.ts             # Java API response types
+├── public/
+├── tailwind.config.ts
+├── next.config.ts
+└── package.json
